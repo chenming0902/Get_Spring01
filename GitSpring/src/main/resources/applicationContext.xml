@@ -1,10 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl"></bean>
-    <bean id="userService" class="com.itcast.service.impl.UserviceImpl" p:userDao-ref="userDao"/>
+<!--<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl"></bean>-->
+    <!--<bean id="userService" class="com.itcast.service.impl.UserviceImpl" p:userDao-ref="userDao"/>-->
+<!--<bean id="userService" class="com.itcast.service.impl.UserviceImpl">-->
+    <!--<property name="userDao" ref="userDao"></property>-->
+    <!--<property name="username" value="zhangsan"></property>-->
+    <!--<property name="age" value="18"></property>-->
+
+
+<!--</bean>-->
+    <!--<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl">-->
+        <!--<property name="list">-->
+            <!--<list>-->
+                <!--<value>aaa</value>-->
+                <!--<value>bbb</value>-->
+                <!--<value>vvv</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--<bean id="u1" class="com.itcast.domain.User"></bean>-->
+    <!--<bean id="u2" class="com.itcast.domain.User"></bean>-->
+    <!--<bean id="u1" class="com.itcast.domain.User">-->
+        <!--<property name="name" value="zhangsan"></property>-->
+        <!--<property name="age" value="16"></property>-->
+    <!--</bean>-->
+    <!--<bean id="u2" class="com.itcast.domain.User" >-->
+        <!--<property name="name" value="chenming"></property>-->
+        <!--<property name="age" value="19"></property>-->
+    <!--</bean>-->
+    <!--<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl">-->
+        <!--<property name="userList">-->
+            <!--<list>-->
+                <!--<ref bean="u1"></ref>-->
+                <!--<ref bean="u2"></ref>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <bean id="u3" class="com.itcast.domain.User">
+        <property name="name" value="ss"></property>
+        <property name="age" value="15"></property>
+    </bean>
+    <bean id="u4" class="com.itcast.domain.User">
+        <property name="name" value="bb"></property>
+        <property name="age" value="15"></property>
+    </bean>
+
+    <bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl">
+        <property name="mapUser">
+            <map>
+                <entry key="user1" value-ref="u3"></entry>
+                <entry key="user2" value-ref="u4"></entry>
+            </map>
+        </property>
+        <property name="prop">
+            <props >
+                <prop key="p1">qqq</prop>
+                <prop key="p2">222</prop>
+                <prop key="p3">ddd</prop>
+            </props>
+
+        </property>
+    </bean>
+
+
+    <!--<bean id="userDao" class="com.itcast.dao.impl.UserDaoImpl">-->
+        <!--  <property name="userList">-->
+        <!--    <list>-->
+        <!--      -->
+        <!--      <ref bean="u1"/>-->
+        <!--      <ref bean="u2"/>   -->
+        <!--    </list>-->
+        <!--  </property>-->
+
+
+<!--</bean>-->
 
 
 

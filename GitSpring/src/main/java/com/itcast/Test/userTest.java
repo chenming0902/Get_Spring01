@@ -11,9 +11,9 @@ public class userTest {
     public void test1(){
         ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        UserService userService = (UserService) app.getBean("userService");
+        UserDao userDao = (UserDao) app.getBean("userDao");
 
-        userService.save();
+        userDao.save();
 
 
     }
