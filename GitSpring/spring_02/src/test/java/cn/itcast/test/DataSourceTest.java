@@ -8,11 +8,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class DataSource {
+public class DataSourceTest {
 
     @Test
-    public void test1() throws PropertyVetoException, SQLException {
-        ComboPooledDataSource   dataSource  = new ComboPooledDataSource();
+    public void test1() throws Exception {
+        ComboPooledDataSource dataSource  = new ComboPooledDataSource();
         dataSource.setDriverClass("com.mysql.jdbc.Driver");
         dataSource.setJdbcUrl("jdbc:mysql://locahost:3306/test");
         dataSource.setUser("root");
@@ -22,15 +22,15 @@ public class DataSource {
         connection.close();
     }
     @Test
-    public void test2() throws PropertyVetoException, SQLException {
+    public void test2() throws Exception {
         ResourceBundle rb = ResourceBundle.getBundle("jdbc");
-        String driver = rb.getString("jdbc.druid");
+        String driver = rb.getString("jdbc.driver");
         String url = rb.getString("jdbc.url");
         String username = rb.getString("jdbc.username");
         String password = rb.getString("jdbc.password");
 
 
-        ComboPooledDataSource   dataSource  = new ComboPooledDataSource();
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
         dataSource.setDriverClass(driver);
         dataSource.setJdbcUrl(url);
         dataSource.setUser(username);
